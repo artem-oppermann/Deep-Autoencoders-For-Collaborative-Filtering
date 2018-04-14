@@ -3,8 +3,8 @@ import tensorflow as tf
 import sys
 from preprocess_data import _get_dataset
 
-OUTPUT_DIR_TRAIN='C:/Users/Admin/Desktop/deep_learning _local_datasets/colaborative filtering/TFRecords_normal_ratings/tf_records_1M/train'
-OUTPUT_DIR_TEST='C:/Users/Admin/Desktop/deep_learning _local_datasets/colaborative filtering/TFRecords_normal_ratings/tf_records_1M/test'
+#OUTPUT_DIR_TRAIN='C:/Users/Admin/Desktop/deep_learning_data/colaborative_filtering/TFRecords_normal_ratings/tf_records_1M/train'
+#OUTPUT_DIR_TEST='C:/Users/Admin/Desktop/deep_learning_data/colaborative_filtering/TFRecords_normal_ratings/tf_records_1M/test'
 
 
 def _add_to_tfrecord(data_sample,tfrecord_writer):
@@ -37,13 +37,14 @@ def bytes_feature(value):
     return tf.train.Feature(bytes_list=tf.train.BytesList(value=value))
 
 
-def run(output_dir):
+def main():
+    ''' Writes the .txt training and testing data into binary TF_Records.'''
 
     SAMPLES_PER_FILES=100
     
-    training_set, test_set=_get_dataset('1M')
+    training_set, test_set=_get_dataset(sys.argv[1])
 
-    for data_set, name, dir_ in zip([training_set, test_set], ['train', 'test'], output_dir):
+    for data_set, name, dir_ in zip([training_set, test_set], ['train', 'test'], [sys.argv[2], sys.argv[3]]):
         
         num_samples=len(data_set)
         i = 0
@@ -75,8 +76,9 @@ def run(output_dir):
     
     
 if __name__ == "__main__":
-    
-    run(output_dir=[OUTPUT_DIR_TRAIN,OUTPUT_DIR_TEST])
+
+    #main(output_dir=[OUTPUT_DIR_TRAIN,OUTPUT_DIR_TEST])
+    main()
             
     
 

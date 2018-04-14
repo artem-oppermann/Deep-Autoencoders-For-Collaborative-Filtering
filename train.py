@@ -4,11 +4,11 @@ from DAE import DAE
 import numpy as np
 
 tf.app.flags.DEFINE_string('tf_records_train_path', 
-                           'C:/Users/Admin/Desktop/deep_learning _local_datasets/colaborative filtering/TFRecords_normal_ratings/tf_records_1M/train/',
+                           'C:/Users/Admin/Desktop/deep_learning_data/colaborative_filtering/TFRecords_normal_ratings/tf_records_1M/train/',
                            'Path of the training data.')
 
 tf.app.flags.DEFINE_string('tf_records_test_path', 
-                           'C:/Users/Admin/Desktop/deep_learning _local_datasets/colaborative filtering/TFRecords_normal_ratings/tf_records_1M/test/',
+                           'C:/Users/Admin/Desktop/deep_learning_data/colaborative_filtering/TFRecords_normal_ratings/tf_records_1M/test/',
                            'Path of the test data.')
 
 tf.app.flags.DEFINE_integer('num_epoch', 1000,
@@ -17,7 +17,7 @@ tf.app.flags.DEFINE_integer('num_epoch', 1000,
 tf.app.flags.DEFINE_integer('batch_size', 16,
                             'Size of the training batch.')
 
-tf.app.flags.DEFINE_float('learning_rate',0.001,
+tf.app.flags.DEFINE_float('learning_rate',0.0005,
                           'Learning_Rate')
 
 tf.app.flags.DEFINE_boolean('l2_reg', False,

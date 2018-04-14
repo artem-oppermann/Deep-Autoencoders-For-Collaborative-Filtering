@@ -2,10 +2,11 @@ import pandas as pd
 import numpy as np
 import gc
 
-ROOT_DIR='C:/Users/Admin/Desktop/deep_learning _local_datasets/colaborative filtering'
+#ROOT_DIR='C:/Users/Admin/Desktop/deep_learning_data/colaborative_filtering'
 
 
 def convert(data, num_users, num_movies):
+    ''' Making a User-Movie-Matrix'''
     
     new_data=[]
     
@@ -25,7 +26,8 @@ def convert(data, num_users, num_movies):
         
     return new_data
 
-def get_dataset_1M():
+def get_dataset_1M(ROOT_DIR):
+    ''' For each train.dat and test.dat making a User-Movie-Matrix'''
     
     gc.enable()
     
@@ -45,29 +47,6 @@ def get_dataset_1M():
     
 
 
-def get_dataset_100k():
-    
-    training_set=pd.read_csv(ROOT_DIR+'/ml-100k/ua.base', delimiter='\t')
-    training_set=np.array(training_set, dtype=np.uint32)
-    
-    test_set=pd.read_csv(ROOT_DIR+'/ml-100k/ua.test', delimiter='\t')
-    test_set=np.array(test_set, dtype=np.uint32)
-      
-    num_users=int(max(max(training_set[:,0]), max(test_set[:,0])))
-    num_movies=int(max(max(training_set[:,1]), max(test_set[:,1])))
+def _get_dataset(ROOT_DIR):
 
-    training_set=convert(training_set,num_users, num_movies)
-    test_set=convert(test_set,num_users, num_movies)
-    
-    return training_set, test_set
-
-
-
-def _get_dataset(kind):
-
-    if kind=='1M':
-        training_set, test_set=get_dataset_1M()
-    elif kind=='100k':
-        training_set, test_set=get_dataset_100k()
-    
-    return training_set, test_set
+    return get_dataset_1M(ROOT_DIR)
