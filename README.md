@@ -15,8 +15,8 @@ The current version support only the MovieLens ml-1m.zip dataset obtained from h
 - Download the ml-1m.zip dataset from  https://grouplens.org/datasets/movielens/.
 - Devide the ```ratings.dat``` file from ml-1m.zip into training and testing datasets ```train.dat``` and ```test.dat```. Save them under ROOT_DIR/ml-1m.zip/..
 - In ```preprocess_data.py``` change the ROOT_DIR.
-- Use ```tf_record_writer.py``` to transform the ```train.dat``` and ```test.dat``` files to TF_Records files (change the OUTPUT_DIR_TRAIN, OUTPUT_DIR_TEST in ```tf_record_writer.py``` which are the output directories for the TF_Records files)
-- execute ```train.py``` to start the training (change tf_records_train_path, tf_records_test_path)
+- Use ```tf_record_writer.py``` to transform the ```train.dat``` and ```test.dat``` files to TF_Records files (Change the OUTPUT_DIR_TRAIN, OUTPUT_DIR_TEST in ```tf_record_writer.py``` which are the output directories for the TF_Records files).
+- Change tf_records_train_path and tf_records_test_path in ```train.py``` and then execute the script to start the training.
 
 ## Training
 
