@@ -13,14 +13,15 @@ The current version support only the MovieLens ml-1m.zip dataset obtained from h
 ## How to Use
 
 - Download the ml-1m.zip dataset from  https://grouplens.org/datasets/movielens/ into a directory.
-- Devide the ratings.dat file into a train.dat and test.dat and save them under ROOT_DIR/ml-1m.zip/..
-- In preprocess_data.py change the ROOT_DIR path
-- Use tf_record_writer.py to transfort the train.dat and test.dat to TF_Records files (change the OUTPUT_DIR_TRAIN, OUTPUT_DIR_TEST paths which are the output directories for the TF_Records files)
-- execute train.py to start the training (change tf_records_train_path, tf_records_test_path)
+- Devide the ```ratings.dat``` file into training and testing datasets ```train.dat``` and ```test.dat```. Save them under ROOT_DIR/ml-1m.zip/..
+- In ```preprocess_data.py``` change the ROOT_DIR.
+- Use ```tf_record_writer.py``` to transform the ```train.dat``` and ```test.dat``` files to TF_Records files (change the OUTPUT_DIR_TRAIN, OUTPUT_DIR_TEST paths which are the output directories for the TF_Records files)
+- execute ```train.py``` to start the training (change tf_records_train_path, tf_records_test_path)
 
 ## Training
 
 During the training after each epoch the loss on the training and testing data set is shown. The loss is a root mean sqaurred error loss (RMSE).The RMSE represents the sample standard deviation of the differences between predicted values and observed values. E.g. a RMSE of 0.923 means that on an average the predicted rating deviates from the actual rating by 0.923 stars.
+Here are the first 50 epochs of the training.
 
     epoch_nr: 0, train_loss: 1.169, test_loss: 1.020
     epoch_nr: 1, train_loss: 1.000, test_loss: 1.018
