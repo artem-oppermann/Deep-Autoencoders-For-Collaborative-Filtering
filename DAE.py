@@ -23,11 +23,17 @@ class DAE:
                                      initializer=self.weight_initializer)
             self.W_3=tf.get_variable(name='weight_3', shape=(self.FLAGS.num_h,self.FLAGS.num_h), 
                                      initializer=self.weight_initializer)
-            self.W_4=tf.get_variable(name='weight_4', shape=(self.FLAGS.num_h,self.FLAGS.num_h), 
+            self.W_4=tf.get_variable(name='weight_4', shape=(self.FLAGS.num_h,self.FLAGS.num_v), 
                                      initializer=self.weight_initializer)
-            self.W_5=tf.get_variable(name='weight_5', shape=(self.FLAGS.num_h,self.FLAGS.num_v), 
-                                     initializer=self.weight_initializer)
-    
+        
+        with tf.name_scope('biases'):
+            self.b1=tf.get_variable(name='bias_1', shape=(self.FLAGS.num_h), 
+                                    initializer=self.bias_initializer)
+            self.b2=tf.get_variable(name='bias_2', shape=(self.FLAGS.num_h), 
+                                    initializer=self.bias_initializer)
+            self.b3=tf.get_variable(name='bias_3', shape=(self.FLAGS.num_h), 
+                                    initializer=self.bias_initializer)
+        
     def _inference(self, x):
         ''' Making one forward pass. Predicting the networks outputs.
         @param x: input ratings
@@ -36,12 +42,11 @@ class DAE:
         '''
         
         with tf.name_scope('inference'):
-            a1=tf.nn.sigmoid(tf.matmul(x, self.W_1))
-            a2=tf.nn.sigmoid(tf.matmul(a1, self.W_2))
-            a3=tf.nn.sigmoid(tf.matmul(a2, self.W_3))
-            a4=tf.nn.sigmoid(tf.matmul(a3, self.W_4))
-            a5=tf.matmul(a4, self.W_5) 
-        return a5
+             a1=tf.nn.sigmoid(tf.nn.bias_add(tf.matmul(x, self.W_1),self.b1))
+             a2=tf.nn.sigmoid(tf.nn.bias_add(tf.matmul(a1, self.W_2),self.b2))
+             a3=tf.nn.sigmoid(tf.nn.bias_add(tf.matmul(a2, self.W_3),self.b3))   
+             a4=tf.matmul(a3, self.W_4) 
+        return a4
     
     def _compute_loss(self, predictions, labels,num_labels):
         ''' Computing the Mean Squared Error loss between the input and output of the network.
