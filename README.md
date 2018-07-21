@@ -90,3 +90,11 @@ Here are the first 50 epochs of the training.
 | management  | 
 | admin  | 
 | entrepreneur  | 
+
+| Job  | 
+| ------------- | 
+| 0  |
+| 1  | 
+| 2  | 
+| 3  | 
+| 4  | 
