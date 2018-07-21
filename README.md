@@ -83,7 +83,10 @@ Here are the first 50 epochs of the training.
     
     
     
-| First Header  | Second Header |
-| ------------- | ------------- |
-| Content Cell  | Content Cell  |
-| Content Cell  | Content Cell  |
+| Job  | 
+| ------------- | 
+| technician  |
+| retired  | 
+| management  | 
+| admin  | 
+| entrepreneur  | 
