@@ -82,27 +82,4 @@ Here are the first 50 epochs of the training.
     epoch_nr: 50, train_loss: 0.844, test_loss: 0.929
     
     
-    
-| Job  | 
-| ------------- | 
-| technician  |
-| retired  | 
-| management  | 
-| admin  | 
-| entrepreneur  | 
 
-| Job  | 
-| ------------- | 
-| 0  |
-| 1  | 
-| 2  | 
-| 3  | 
-| 4  | 
-
-| x_1| x_2  | x_3  | x_4  | x_5  |
-| ---| ---|---|---|---|
-| 1  |0|0|0|0|
-| 0  |1|0|0|0|
-| 0  |0|1|0|0|
-| 0  |0|0|1|0|
-| 0  |0|0|0|1 |
