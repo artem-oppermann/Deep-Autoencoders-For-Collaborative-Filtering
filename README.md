@@ -80,3 +80,10 @@ Here are the first 50 epochs of the training.
     epoch_nr: 48, train_loss: 0.846, test_loss: 0.925
     epoch_nr: 49, train_loss: 0.844, test_loss: 0.928
     epoch_nr: 50, train_loss: 0.844, test_loss: 0.929
+    
+    
+    
+| First Header  | Second Header |
+| ------------- | ------------- |
+| Content Cell  | Content Cell  |
+| Content Cell  | Content Cell  |
