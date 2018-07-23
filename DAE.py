@@ -83,7 +83,8 @@ class DAE:
         MSE_loss=self._compute_loss(outputs,x,num_train_labels)
         
         if self.FLAGS.l2_reg==True:
-            l2_loss = tf.add_n([tf.nn.l2_loss(v) for v in tf.trainable_variables()])
+            l2_loss = tf.add_n([tf.nn.l2_loss(v) for v in tf.trainable_variables()
+                                if 'bias' not in v.name])
             MSE_loss = MSE_loss +  self.FLAGS.lambda_ * l2_loss
         
         train_op=tf.train.AdamOptimizer(self.FLAGS.learning_rate).minimize(MSE_loss)
