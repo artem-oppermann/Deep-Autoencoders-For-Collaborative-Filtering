@@ -10,7 +10,7 @@ In this project I predict the ratings a user would give a movie based on this us
 
 The current version support only the MovieLens ml-1m.zip dataset obtained from https://grouplens.org/datasets/movielens/. 
 
-## How to Use
+## Model Training
 
 - Download the ml-1m.zip dataset from  https://grouplens.org/datasets/movielens/.
 - Devide the ```ratings.dat``` file from ml-1m.zip into training and testing datasets ```train.dat``` and ```test.dat```. by using the command 
@@ -25,12 +25,16 @@ The current version support only the MovieLens ml-1m.zip dataset obtained from h
 
         python training.py 
 
-## Training
+# Training Results 
 
-During the training after each epoch the loss on the training and testing data set is shown. The loss is a root mean sqaurred error loss (RMSE).The RMSE represents the sample standard deviation of the differences between predicted values and observed values. E.g. a RMSE of 0.923 means that on an average the predicted rating deviates from the actual rating by 0.923 stars.
-Here are the first 50 epochs of the training.
+During the training after each epoch the loss on the training and testing data set is shown. The loss is a root mean squared error loss (MSE).The mean absolute error (mean_abs_error) is a better metric to validate the performance however.mean_abs_error tells the differences between predicted ratings and true ratings. E.g. a mean_abs_error of 0.923 means that on an average the predicted rating deviates from the actual rating by 0.923 stars.
 
-
+       epoch_nr: 0, train_loss: 1.421, test_loss: 0.967, mean_abs_error: 0.801
+       epoch_nr: 1, train_loss: 0.992, test_loss: 0.961, mean_abs_error: 0.797
+       epoch_nr: 2, train_loss: 0.987, test_loss: 0.962, mean_abs_error: 0.798
+       epoch_nr: 3, train_loss: 0.981, test_loss: 0.965, mean_abs_error: 0.801
+       epoch_nr: 4, train_loss: 0.969, test_loss: 0.974, mean_abs_error: 0.808
+       epoch_nr: 5, train_loss: 0.949, test_loss: 0.988, mean_abs_error: 0.822
     
     
 
