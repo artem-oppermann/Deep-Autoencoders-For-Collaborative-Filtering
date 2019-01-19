@@ -25,7 +25,7 @@ The current version support only the MovieLens ml-1m.zip dataset obtained from h
 
         python training.py 
 
-# Training Results 
+### Training Results 
 
 During the training after each epoch the loss on the training and testing data set is shown. The loss is a root mean squared error loss (MSE). The mean absolute error (mean_abs_error) is a better metric to validate the performance however.mean_abs_error tells the differences between predicted ratings and true ratings. E.g. a mean_abs_error of 0.923 means that on an average the predicted rating deviates from the actual rating by 0.923 stars.
 
