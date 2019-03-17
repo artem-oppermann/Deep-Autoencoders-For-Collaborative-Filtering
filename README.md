@@ -39,4 +39,4 @@ During the training after each epoch the loss on the training and testing data s
     
 ## Author 
 
-- Artem Oppermann, Msc.Physics, Deep Learning Engineer, Co-Founder of [Deep Learning Academy](https://www.deeplearning-academy.com/)
+- **Artem Oppermann**: Msc.Physics, Deep Learning Engineer, Co-Founder of [Deep Learning Academy](https://www.deeplearning-academy.com/)
