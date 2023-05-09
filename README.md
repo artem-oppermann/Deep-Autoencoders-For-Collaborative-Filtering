@@ -37,6 +37,4 @@ During the training after each epoch the loss on the training and testing data s
        epoch_nr: 5, train_loss: 0.949, test_loss: 0.988, mean_abs_error: 0.822
     
     
-## Author 
 
-- **Artem Oppermann**: Msc.Physics, Deep Learning Engineer, Co-Founder of [Deep Learning Academy](https://www.deeplearning-academy.com/)
